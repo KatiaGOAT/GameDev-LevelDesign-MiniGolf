@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ExitScript : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         // Check if the collision is with a specific object or tag
-        if (collision.gameObject.CompareTag("ExitCollider"))
+        if (other.CompareTag("Player"))
         {
             SceneManager.LoadScene("LevelDesign_Scene");
         }
